@@ -1,4 +1,4 @@
-```
+```mermaid
 flowchart TD
     A[LazyBoost] --> B[Render Toggles]
 
