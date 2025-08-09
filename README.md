@@ -14,11 +14,7 @@ flowchart TD
 
     B --> B3[Disable Entity Shadows All mobs and items]
 
-    C --> C1[Merge Identical Particles e.g. item drops]
-
-    C --> C2[Limit Particle Count Configurable threshold]
-
-    C --> C3[Disable Damage Effects Hurt animations]
+    C --> C1[partical toggle]
 
     D --> D1[Hide XP Bar]
 
