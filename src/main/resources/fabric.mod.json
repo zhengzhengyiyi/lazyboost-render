@@ -3,15 +3,15 @@
 	"id": "lazyboost",
 	"version": "${version}",
 	"name": "lazyboost",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "a mod that boost game experences in client rendering",
 	"authors": [
-		"Me!"
+		"zhengzhengyiyi"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "apache license 2.0",
 	"icon": "assets/lazyboost/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"com.zhengzhengyiyimc.LazyboostClient"
+		],
+		"modmenu": [
+			"com.zhengzhengyiyimc.LazyboostMenu"
 		]
 	},
 	"mixins": [
@@ -32,7 +35,7 @@
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.20.1",
-		"java": ">=17",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {
