@@ -2,19 +2,13 @@
 flowchart TD
     A[LazyBoost] --> B[Render Toggles]
 
-    A --> C[Particle Optimizer]
-
     A --> D[Minimal HUD]
 
-    A --> E[Smart Load Reduction]
+    B --> B1[Disable Weather Particles Rain/Snow/Thunder (finished)]
 
-    B --> B1[Disable Weather Particles Rain/Snow/Thunder]
+    B --> B2[Disable Entity render All mobs and items add distance entity render (finished)]
 
-    B --> B2[Freeze Block Animations Fire/Water/Redstone]
-
-    B --> B3[Disable Entity Shadows All mobs and items]
-
-    C --> C1[partical toggle]
+    C --> C1[partical toggle (finished)]
 
     D --> D1[Hide XP Bar]
 
@@ -22,10 +16,8 @@ flowchart TD
 
     D --> D3[Disable Item Rotation Inventory/GUI]
 
-    E --> E1[Static Render Distance No dynamic LOD]
+    E --> E1[Auto FPS Reduction When idle for 30s]
 
-    E --> E2[Auto FPS Reduction When idle for 30s]
-
-    E --> E3[Mute Cave Ambience Configurable]
+    E --> E2[Mute Cave Ambience Configurable]
 
 ```
