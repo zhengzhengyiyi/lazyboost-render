@@ -4,11 +4,11 @@ flowchart TD
 
     A --> D[Minimal HUD]
 
-    B --> B1[Disable Weather Particles Rain/Snow/Thunder (finished)]
+    B --> B1[Disable Weather Particles Rain/Snow/Thunder \(finished\)]
 
-    B --> B2[Disable Entity render All mobs and items add distance entity render (finished)]
+    B --> B2[Disable Entity render All mobs and items add distance entity render \(finished\)]
 
-    C --> C1[partical toggle (finished)]
+    C --> C1[partical toggle \(finished\)]
 
     D --> D1[Hide XP Bar]
 
