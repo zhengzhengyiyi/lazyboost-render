@@ -20,7 +20,7 @@ flowchart TD
 
     D --> D3[Disable Item Rotation Inventory/GUI]
 
-    E --> E1[Auto FPS Reduction When idle for 30s]
+    E --> E1[lower fps when you are not activating Minecraft finished]
 
     E --> E2[Mute Cave Ambience Configurable]
 
