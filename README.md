@@ -8,6 +8,10 @@ flowchart TD
 
     B --> B2[Disable Entity render All mobs and items add distance entity render finished]
 
+    A --> C
+
+    A --> E
+
     C --> C1[partical toggle finished]
 
     D --> D1[Hide XP Bar]
