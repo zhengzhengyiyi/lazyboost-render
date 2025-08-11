@@ -2,6 +2,10 @@
     "text.autoconfig.lazyboost_configure.option.disablePartical": "disable particals",
     "text.autoconfig.lazyboost_configure.option.disableWeather": "disable weather",
     "text.autoconfig.lazyboost_configure.option.entity_render_distance": "max entity render distance",
+    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "enableAutoFpsReduction",
 
-    "text.autoconfig.lazyboost_configure.title": "lazy boost"
+    "text.autoconfig.lazyboost_configure.title": "lazy boost",
+
+    "key.lazyboost.opengui": "open lazy boost gui key",
+    "key.lazyboost.key": "lazy boost key"
 }
