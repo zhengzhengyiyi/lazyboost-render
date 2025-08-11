@@ -1,0 +1,11 @@
+{
+    "text.autoconfig.lazyboost_configure.option.disablePartical": "禁用粒子效果",
+    "text.autoconfig.lazyboost_configure.option.disableWeather": "禁用天气效果",
+    "text.autoconfig.lazyboost_configure.option.entity_render_distance": "最大实体渲染距离",
+    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "启用自动降低 FPS",
+
+    "text.autoconfig.lazyboost_configure.title": "Lazy Boost 配置",
+
+    "key.lazyboost.opengui": "打开 Lazy Boost 配置界面",
+    "key.lazyboost.key": "Lazy Boost 功能键"
+}
