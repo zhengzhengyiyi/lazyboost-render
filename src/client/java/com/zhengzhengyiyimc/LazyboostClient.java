@@ -12,6 +12,9 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.ActionResult;
 import org.lwjgl.glfw.GLFW;
 
+import com.zhengzhengyiyimc.config.ModConfig;
+import com.zhengzhengyiyimc.hub.HubRenderer;
+
 public class LazyboostClient implements ClientModInitializer {
     private long windowHandle = -1L;
     private boolean isFpsReduced = false;
@@ -33,6 +36,8 @@ public class LazyboostClient implements ClientModInitializer {
                 GLFW.GLFW_KEY_UNKNOWN,
                 "key.lazyboost.key"
         ));
+
+		HubRenderer.init();
 
         ClientTickEvents.START_CLIENT_TICK.register(mc -> {
             if (windowHandle == -1L && mc.getWindow() != null) {

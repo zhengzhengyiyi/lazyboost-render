@@ -4,6 +4,27 @@
     "text.autoconfig.lazyboost_configure.option.entity_render_distance": "最大实体渲染距离",
     "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "启用自动降低 FPS",
 
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCave": "禁用洞穴环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCave.@Tooltip": "禁用深暗洞穴中持续播放的低沉环境音效。",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientBasaltDeltas": "禁用玄武岩三角洲环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientBasaltDeltas.@Tooltip": "禁用玄武岩三角洲生物群系的环境音效。",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCrimsonForest": "禁用绯红森林环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCrimsonForest.@Tooltip": "禁用绯红森林生物群系的环境音效。",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientNetherWastes": "禁用下界荒地环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientNetherWastes.@Tooltip": "禁用下界荒地生物群系的环境音效。",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley": "禁用灵魂沙峡谷环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley.@Tooltip": "禁用灵魂沙峡谷生物群系的环境音效。",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientWarpedForest": "禁用诡异森林环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientWarpedForest.@Tooltip": "禁用诡异森林生物群系的环境音效。",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientUnderwater": "禁用水下环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientUnderwater.@Tooltip": "禁用在水下时播放的环境音效。",
+
     "text.autoconfig.lazyboost_configure.title": "Lazy Boost 配置",
 
     "key.lazyboost.opengui": "打开 Lazy Boost 配置界面",

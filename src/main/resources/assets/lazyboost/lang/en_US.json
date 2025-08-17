@@ -3,6 +3,8 @@
     "text.autoconfig.lazyboost_configure.option.disableWeather": "disable weather",
     "text.autoconfig.lazyboost_configure.option.entity_render_distance": "max entity render distance",
     "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "enableAutoFpsReduction",
+    "text.autoconfig.lazyboost_configure.option.smallhub": "enable smallhub",
+    "text.autoconfig.lazyboost_configure.option.ambientSoundOptions": "ambientSoundOptions",
 
     "text.autoconfig.lazyboost_configure.title": "lazy boost",
 

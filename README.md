@@ -1,27 +1,55 @@
-```mermaid
-flowchart TD
-    A[LazyBoost] --> B[Render Toggles]
+# LazyBoost
 
-    A --> D[Minimal HUD]
+LazyBoost is a Minecraft Fabric mod that boosts client rendering performance and provides many configurable visual and audio options for a smoother gameplay experience.
 
-    B --> B1[Disable Weather Particles Rain/Snow/Thunder finished]
+## Features
 
-    B --> B2[Disable Entity render All mobs and items add distance entity render finished]
+- **Weather Particle Toggle**  
+  Disable all weather particles (rain, snow, thunder) for better performance.
 
-    A --> C
+- **Entity Render Distance**  
+  Set the maximum distance for entity rendering, or disable all entity rendering.
 
-    A --> E
+- **Weather Rendering Toggle**  
+  Option to disable weather rendering (sky, clouds, etc.).
 
-    C --> C1[partical toggle finished]
+- **Ambient Sound Control**  
+  Mute specific ambient sounds, including:
+  - Cave ambience
+  - Basalt Deltas
+  - Crimson Forest
+  - Nether Wastes
+  - Soul Sand Valley
+  - Warped Forest
+  - Underwater ambience
 
-    D --> D1[Hide XP Bar]
+- **Minimal HUD**  
+  Show a simplified HUD with player position, FPS, TPS, and biome name.  
+  Option to enable/disable this feature.
 
-    D --> D2[Simplified Health Display Numbers only]
+- **Auto FPS Reduction**  
+  Automatically lowers FPS limit to 12 when Minecraft window is unfocused or minimized, saving system resources.
 
-    D --> D3[Disable Item Rotation Inventory/GUI]
+- **ModMenu Integration**  
+  All options can be configured in-game via ModMenu or the config file.
 
-    E --> E1[lower fps when you are not activating Minecraft finished]
+## Installation
 
-    E --> E2[Mute Cave Ambience Configurable]
+1. Download the latest release from [Modrinth](https://modrinth.com/mod/lazyboost).
+2. Place the downloaded `.jar` file into your Minecraft `mods` folder.
+3. Make sure you have installed Fabric Loader and Fabric API.
+4. (Optional) Install ModMenu for in-game configuration.
 
-```
+## Configuration
+
+- Press the LazyBoost key (configurable in Controls) to open the configuration GUI.
+- You can also use ModMenu to access the config screen.
+- All options are saved in the config file and take effect immediately.
+
+## License
+
+Licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
+
+---
+
+<!-- 如需更多帮助或反馈，请访问 [GitHub 项目主页](https://github.com/zhengzhengyiyi/lazyboost-render)。 -->

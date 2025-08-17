@@ -4,7 +4,8 @@
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"WeatherParticlesMixin",
-		"WorldRendererMixin"
+		"WorldRendererMixin",
+		"SoundEventCancellerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
