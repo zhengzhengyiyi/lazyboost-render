@@ -35,7 +35,7 @@ LazyBoost is a Minecraft Fabric mod that boosts client rendering performance and
 
 ## Installation
 
-1. Download the latest release from [Modrinth](https://modrinth.com/mod/lazyboost).
+1. Download the latest release from [Modrinth](https://modrinth.com/mod/lazyboost-render).
 2. Place the downloaded `.jar` file into your Minecraft `mods` folder.
 3. Make sure you have installed Fabric Loader and Fabric API.
 4. (Optional) Install ModMenu for in-game configuration.
