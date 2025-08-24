@@ -1,13 +1,34 @@
 {
-    "text.autoconfig.lazyboost_configure.option.disablePartical": "disable particals",
-    "text.autoconfig.lazyboost_configure.option.disableWeather": "disable weather",
-    "text.autoconfig.lazyboost_configure.option.entity_render_distance": "max entity render distance",
-    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "enableAutoFpsReduction",
+    "text.autoconfig.lazyboost_configure.option.disablePartical": "Disable particles",
+    "text.autoconfig.lazyboost_configure.option.disableWeather": "Disable weather effects",
+    "text.autoconfig.lazyboost_configure.option.entity_render_distance": "Max entity render distance",
+    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "Enable auto FPS reduction",
     "text.autoconfig.lazyboost_configure.option.smallhub": "enable smallhub",
     "text.autoconfig.lazyboost_configure.option.ambientSoundOptions": "ambientSoundOptions",
 
-    "text.autoconfig.lazyboost_configure.title": "lazy boost",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCave": "Disable cave ambience",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCave.@Tooltip": "Disable the deep, low cave ambience sound that plays in dark caves.",
 
-    "key.lazyboost.opengui": "open lazy boost gui key",
-    "key.lazyboost.key": "lazy boost key"
+    "text.autoconfig.lazyboost_configure.option.disableAmbientBasaltDeltas": "Disable Basalt Deltas ambience",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientBasaltDeltas.@Tooltip": "Disable ambience sounds in the Basalt Deltas biome.",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCrimsonForest": "Disable Crimson Forest ambience",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCrimsonForest.@Tooltip": "Disable ambience sounds in the Crimson Forest biome.",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientNetherWastes": "Disable Nether Wastes ambience",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientNetherWastes.@Tooltip": "Disable ambience sounds in the Nether Wastes biome.",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley": "Disable Soul Sand Valley ambience",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley.@Tooltip": "Disable ambience sounds in the Soul Sand Valley biome.",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientWarpedForest": "Disable Warped Forest ambience",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientWarpedForest.@Tooltip": "Disable ambience sounds in the Warped Forest biome.",
+
+    "text.autoconfig.lazyboost_configure.option.disableAmbientUnderwater": "Disable underwater ambience",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientUnderwater.@Tooltip": "Disable ambience sounds played when underwater.",
+
+    "text.autoconfig.lazyboost_configure.title": "Lazy Boost Config",
+
+    "key.lazyboost.opengui": "Open Lazy Boost config screen",
+    "key.lazyboost.key": "Lazy Boost key"
 }

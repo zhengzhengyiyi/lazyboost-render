@@ -14,7 +14,6 @@ import com.zhengzhengyiyimc.config.ModConfig;
 
 @Mixin(SoundManager.class)
 public class SoundEventCancellerMixin {
-
     @Inject(method = "play(Lnet/minecraft/client/sound/SoundInstance;)V", at = @At("HEAD"), cancellable = true)
     private void lazyboost_cancelAmbientSound(SoundInstance soundInstance, CallbackInfo ci) {
         ModConfig config = null;

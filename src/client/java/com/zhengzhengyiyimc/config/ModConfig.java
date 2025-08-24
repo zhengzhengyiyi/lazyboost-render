@@ -22,4 +22,6 @@ public class ModConfig implements ConfigData {
     public boolean enableAutoFpsReduction = true;
 
     public boolean smallhub = true;
+
+    public boolean disablewater = false;
 }
