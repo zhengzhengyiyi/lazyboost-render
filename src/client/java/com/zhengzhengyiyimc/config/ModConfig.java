@@ -2,21 +2,30 @@ package com.zhengzhengyiyimc.config;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.autoconfig.annotation.ConfigEntry.Category;
 
 @Config(name="lazyboost_configure")
 public class ModConfig implements ConfigData {
     public boolean disablePartical = false;
     public boolean disableWeather = false;
 
-    @me.shedaniel.autoconfig.annotation.ConfigEntry.BoundedDiscrete(min = 0, max = 20 * 8)
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 20 * 8)
     public int entity_render_distance = 48;
 
+    @Category("Sound")
     public boolean disableAmbientCave = false;
+    @Category("Sound")
     public boolean disableAmbientBasaltDeltas = false;
+    @Category("Sound")
     public boolean disableAmbientCrimsonForest = false;
+    @Category("Sound")
     public boolean disableAmbientNetherWastes = false;
+    @Category("Sound")
     public boolean disableAmbientSoulSandValley = false;
+    @Category("Sound")
     public boolean disableAmbientWarpedForest = false;
+    @Category("Sound")
     public boolean disableAmbientUnderwater = false;
 
     public boolean enableAutoFpsReduction = true;
@@ -24,4 +33,6 @@ public class ModConfig implements ConfigData {
     public boolean smallhub = true;
 
     public boolean disablewater = false;
+
+    public boolean renderHands = true;
 }

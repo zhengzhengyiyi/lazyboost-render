@@ -6,6 +6,9 @@
     "text.autoconfig.lazyboost_configure.option.smallhub": "enable smallhub",
     "text.autoconfig.lazyboost_configure.option.ambientSoundOptions": "ambientSoundOptions",
 
+    "text.autoconfig.lazyboost_configure.option.disablewater": "Disable water",
+    "text.autoconfig.lazyboost_configure.option.renderHands": "Render hands",
+
     "text.autoconfig.lazyboost_configure.option.disableAmbientCave": "Disable cave ambience",
     "text.autoconfig.lazyboost_configure.option.disableAmbientCave.@Tooltip": "Disable the deep, low cave ambience sound that plays in dark caves.",
 
@@ -30,5 +33,8 @@
     "text.autoconfig.lazyboost_configure.title": "Lazy Boost Config",
 
     "key.lazyboost.opengui": "Open Lazy Boost config screen",
-    "key.lazyboost.key": "Lazy Boost key"
+    "key.lazyboost.key": "Lazy Boost key",
+
+    "text.autoconfig.lazyboost_configure.category.Sound": "Sound",
+    "text.autoconfig.lazyboost_configure.category.default": "General"
 }

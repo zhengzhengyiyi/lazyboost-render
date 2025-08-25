@@ -10,6 +10,7 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.option.SimpleOption;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.ActionResult;
+
 import org.lwjgl.glfw.GLFW;
 
 import com.zhengzhengyiyimc.config.ModConfig;
@@ -26,7 +27,9 @@ public class LazyboostClient implements ClientModInitializer {
     public void onInitializeClient() {
         AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
 
-        AutoConfig.getConfigHolder(ModConfig.class).registerSaveListener((manager, data) -> {
+        AutoConfig.getConfigHolder(ModConfig.class).registerSaveListener((manager, config) -> {
+            MinecraftClient.getInstance().gameRenderer.setRenderHand(config.renderHands);
+
             return ActionResult.SUCCESS;
         });
 
