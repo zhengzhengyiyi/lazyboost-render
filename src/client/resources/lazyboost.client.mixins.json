@@ -5,7 +5,8 @@
 	"client": [
 		"WeatherParticlesMixin",
 		"WorldRendererMixin",
-		"SoundEventCancellerMixin"
+		"SoundEventCancellerMixin",
+		"SinpleOptionMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

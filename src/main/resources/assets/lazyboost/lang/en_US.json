@@ -9,6 +9,9 @@
     "text.autoconfig.lazyboost_configure.option.disablewater": "Disable water",
     "text.autoconfig.lazyboost_configure.option.renderHands": "Render hands",
 
+    "text.autoconfig.lazyboost_configure.option.gamma.@Tooltip": "1.0 is vanilla lighting",
+    "text.autoconfig.lazyboost_configure.option.gamma": "gamma (lighting)",
+
     "text.autoconfig.lazyboost_configure.option.disableAmbientCave": "Disable cave ambience",
     "text.autoconfig.lazyboost_configure.option.disableAmbientCave.@Tooltip": "Disable the deep, low cave ambience sound that plays in dark caves.",
 

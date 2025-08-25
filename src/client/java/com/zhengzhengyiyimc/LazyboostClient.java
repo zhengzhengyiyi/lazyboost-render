@@ -6,6 +6,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.option.SimpleOption;
 import net.minecraft.client.util.InputUtil;
@@ -46,6 +47,10 @@ public class LazyboostClient implements ClientModInitializer {
             if (windowHandle == -1L && mc.getWindow() != null) {
                 windowHandle = mc.getWindow().getHandle();
             }
+
+            GameOptions options = MinecraftClient.getInstance().options;
+
+            options.getGamma().setValue(AutoConfig.getConfigHolder(ModConfig.class).get().gamma);
         });
 
         ClientTickEvents.END_CLIENT_TICK.register(this::onClientTick);

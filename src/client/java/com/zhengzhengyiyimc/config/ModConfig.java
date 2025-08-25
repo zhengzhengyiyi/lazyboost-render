@@ -14,18 +14,25 @@ public class ModConfig implements ConfigData {
     public int entity_render_distance = 48;
 
     @Category("Sound")
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientCave = false;
     @Category("Sound")
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientBasaltDeltas = false;
     @Category("Sound")
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientCrimsonForest = false;
     @Category("Sound")
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientNetherWastes = false;
     @Category("Sound")
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientSoulSandValley = false;
     @Category("Sound")
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientWarpedForest = false;
     @Category("Sound")
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientUnderwater = false;
 
     public boolean enableAutoFpsReduction = true;
@@ -35,4 +42,7 @@ public class ModConfig implements ConfigData {
     public boolean disablewater = false;
 
     public boolean renderHands = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public double gamma = 1.0;
 }
