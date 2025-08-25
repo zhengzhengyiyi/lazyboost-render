@@ -15,12 +15,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.mojang.logging.LogUtils;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.SimpleOption;
