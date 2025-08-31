@@ -27,11 +27,6 @@ public class WorldRendererMixin {
         if (AutoConfig.getConfigHolder(ModConfig.class).getConfig().disableWeather) ci.cancel();
     }
 
-    @Inject(method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FLnet/minecraft/client/render/Camera;ZLjava/lang/Runnable;)V", at = @At("HEAD"), cancellable = true)
-    private void renderSkyCallback(MatrixStack matrices, Matrix4f projectionMatrix, float tickDelta, Camera camera, boolean thickFog, Runnable fogCallback, CallbackInfo ci) {
-        ci.cancel();
-    }
-
     @Inject(method = "render", at = @At("HEAD"))
     private void onRenderStart(CallbackInfo ci) {
         BOXES_TO_RENDER.clear();
@@ -59,7 +54,7 @@ public class WorldRendererMixin {
     }
 
     @Inject(method = "renderLayer", at = @At("HEAD"), cancellable = true)
-    private void renderLayer(RenderLayer renderLayer, MatrixStack matrices, double cameraX, double cameraY, double cameraZ, Matrix4f positionMatrix, CallbackInfo ci) {
+    private void renderLayer(RenderLayer renderLayer, double cameraX, double cameraY, double cameraZ, Matrix4f positionMatrix, Matrix4f projectionMatrix, CallbackInfo ci) {
         if (renderLayer == RenderLayer.getTranslucent() && AutoConfig.getConfigHolder(ModConfig.class).getConfig().disablewater) {
             ci.cancel();
         }
