@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.function.Function;
+import java.io.File;
 
 import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,20 +14,17 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.mojang.serialization.DataResult;
-import com.mojang.serialization.JsonOps;
 
+import com.zhengzhengyiyimc.config.ModConfig;
+
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.option.GameOptions;
-import net.minecraft.client.option.SimpleOption;
 import net.minecraft.client.util.VideoMode;
 import net.minecraft.client.MinecraftClient;
 
 @Mixin(GameOptions.class)
 public class GameOptionsMixin {
-    @Shadow
-    private void accept(Visitor visitor) {}
     @Shadow
     static Logger LOGGER;
     @Shadow
@@ -35,83 +32,79 @@ public class GameOptionsMixin {
     @Shadow
     public void sendClientSettings() {}
     @Shadow
-    public MinecraftClient client;
-    @Shadow
-    public String optionsFile;
-
-	private interface Visitor {
-		<T> void accept(String key, SimpleOption<T> option);
-
-		int visitInt(String key, int current);
-
-		boolean visitBoolean(String key, boolean current);
-
-		String visitString(String key, String current);
-
-		float visitFloat(String key, float current);
-
-		<T> T visitObject(String key, T current, Function<String, T> decoder, Function<T, String> encoder);
+    public File optionsFile;
+	
+	public interface Visitor {
+	    int visitInt(String key, int current);
+	    boolean visitBoolean(String key, boolean current);
+	    float visitFloat(String key, float current);
+	    String visitString(String key, String current);
+	    <T> T visitObject(String key, T current, java.util.function.Function<String, T> decoder, java.util.function.Function<T, String> encoder);
 	}
 
-    @Inject(at = @At("HEAD"), cancellable = true, method = "write")
+    @Inject(at = @At("HEAD"), cancellable = true, method = "Lnet/minecraft/client/option/GameOptions;write()V")
     private void write(CallbackInfo ci) {
-        ci.cancel();
+//      ci.cancel();
+    	
+    	MinecraftClient client = MinecraftClient.getInstance();
 
         try {
 			final PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(this.optionsFile), StandardCharsets.UTF_8));
 
 			try {
 				printWriter.println("version:" + SharedConstants.getGameVersion().getSaveVersion().getId());
-				this.accept(new Visitor() {
-					public void print(String key) {
-						printWriter.print(key);
-						printWriter.print(':');
-					}
-
-					public <T> void accept(String key, SimpleOption<T> option) {
-						DataResult<JsonElement> dataResult = option.getCodec().encodeStart(JsonOps.INSTANCE, option.getValue());
-						// dataResult.error().ifPresent((partialResult) -> {
-						// 	LOGGER.error("Error saving option " + option + ": " + partialResult);
-						// });
-						dataResult.result().ifPresent((json) -> {
-							this.print(key);
-							printWriter.println(GSON.toJson(json));
-						});
-					}
-
-					public int visitInt(String key, int current) {
-						this.print(key);
-						printWriter.println(current);
-						return current;
-					}
-
-					public boolean visitBoolean(String key, boolean current) {
-						this.print(key);
-						printWriter.println(current);
-						return current;
-					}
-
-					public String visitString(String key, String current) {
-						this.print(key);
-						printWriter.println(current);
-						return current;
-					}
-
-					public float visitFloat(String key, float current) {
-						this.print(key);
-						printWriter.println(current);
-						return current;
-					}
-
-					public <T> T visitObject(String key, T current, Function<String, T> decoder, Function<T, String> encoder) {
-						this.print(key);
-						printWriter.println((String)encoder.apply(current));
-						return current;
-					}
-				});
-				if (this.client.getWindow().getVideoMode().isPresent()) {
-					printWriter.println("fullscreenResolution:" + ((VideoMode)this.client.getWindow().getVideoMode().get()).asString());
+//				this.accept(new Visitor() {
+//					public void print(String key) {
+//						printWriter.print(key);
+//						printWriter.print(':');
+//					}
+//
+//					public <T> void accept(String key, SimpleOption<T> option) {
+//						DataResult<JsonElement> dataResult = option.getCodec().encodeStart(JsonOps.INSTANCE, option.getValue());
+//						// dataResult.error().ifPresent((partialResult) -> {
+//						// 	LOGGER.error("Error saving option " + option + ": " + partialResult);
+//						// });
+//						dataResult.result().ifPresent((json) -> {
+//							this.print(key);
+//							printWriter.println(GSON.toJson(json));
+//						});
+//					}
+//
+//					public int visitInt(String key, int current) {
+//						this.print(key);
+//						printWriter.println(current);
+//						return current;
+//					}
+//
+//					public boolean visitBoolean(String key, boolean current) {
+//						this.print(key);
+//						printWriter.println(current);
+//						return current;
+//					}
+//
+//					public String visitString(String key, String current) {
+//						this.print(key);
+//						printWriter.println(current);
+//						return current;
+//					}
+//
+//					public float visitFloat(String key, float current) {
+//						this.print(key);
+//						printWriter.println(current);
+//						return current;
+//					}
+//
+//					public <T> T visitObject(String key, T current, Function<String, T> decoder, Function<T, String> encoder) {
+//						this.print(key);
+//						printWriter.println((String)encoder.apply(current));
+//						return current;
+//					}
+//				});
+				writeOption(printWriter, "gamma", AutoConfig.getConfigHolder(ModConfig.class).getConfig().gamma);
+				if (client.getWindow().getVideoMode().isPresent()) {
+					printWriter.println("fullscreenResolution:" + ((VideoMode)client.getWindow().getVideoMode().get()).asString());
 				}
+				this.sendClientSettings();
 			} catch (Throwable var5) {
 				try {
 					printWriter.close();
@@ -128,5 +121,11 @@ public class GameOptionsMixin {
 		}
 
 		this.sendClientSettings();
+    }
+    
+    private void writeOption(PrintWriter writer, String key, Object value) {
+        writer.print(key);
+        writer.print(':');
+        writer.println(value);
     }
 }

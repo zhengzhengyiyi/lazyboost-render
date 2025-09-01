@@ -6,7 +6,8 @@
 		"WeatherParticlesMixin",
 		"WorldRendererMixin",
 		"SoundEventCancellerMixin",
-		"SinpleOptionMixin"
+		"SinpleOptionMixin",
+		"GameOptionsMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
