@@ -12,11 +12,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.zhengzhengyiyimc.config.ModConfig;
 
 import me.shedaniel.autoconfig.AutoConfig;
+
+import com.mojang.blaze3d.systems.RenderSystem;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 
 @Mixin(WorldRenderer.class)
 public class WorldRendererMixin {
@@ -40,17 +44,75 @@ public class WorldRendererMixin {
         double distance = entity.getPos().distanceTo(client.player.getPos());
         if (distance >= config.entity_render_distance) {
             ci.cancel();
+            
+            if (client.player == null || client.world == null) return;
+
+
+            if (client.player == null || client.world == null) return;
+
+            Camera camera = client.gameRenderer.getCamera();
+            Vec3d camPos = camera.getPos();
+
+            Box box = entity.getBoundingBox();
+            double minX = box.minX - camPos.x;
+            double minY = box.minY - camPos.y;
+            double minZ = box.minZ - camPos.z;
+            double maxX = box.maxX - camPos.x;
+            double maxY = box.maxY - camPos.y;
+            double maxZ = box.maxZ - camPos.z;
+
+            Tessellator tessellator = Tessellator.getInstance();
+            BufferBuilder buffer = tessellator.getBuffer();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
+            RenderSystem.depthMask(false);
+            RenderSystem.setShader(GameRenderer::getPositionColorProgram);
+            buffer.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
+
+            drawAABB(buffer, new Box(minX, minY, minZ, maxX, maxY, maxZ), 1.0f, 0.0f, 0.0f, 0.3f);
+
+            tessellator.draw();
+            RenderSystem.depthMask(true);
+            RenderSystem.disableBlend();
         }
     }
+    
+    private void drawAABB(BufferBuilder buffer, Box box, float r, float g, float b, float a) {
+        buffer.vertex(box.minX, box.minY, box.minZ).color(r, g, b, a).next();
+        buffer.vertex(box.maxX, box.minY, box.minZ).color(r, g, b, a).next();
 
-    @Inject(method = "renderLightSky", at = @At("HEAD"), cancellable = true)
-    private void renderLightSky(CallbackInfo ci) {
-        ci.cancel();
-    }
+        buffer.vertex(box.maxX, box.minY, box.minZ).color(r, g, b, a).next();
+        buffer.vertex(box.maxX, box.minY, box.maxZ).color(r, g, b, a).next();
 
-    @Inject(method = "renderDarkSky", at = @At("HEAD"), cancellable = true)
-    private void renderDarkSky(CallbackInfo ci) {
-        ci.cancel();
+        buffer.vertex(box.maxX, box.minY, box.maxZ).color(r, g, b, a).next();
+        buffer.vertex(box.minX, box.minY, box.maxZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.minX, box.minY, box.maxZ).color(r, g, b, a).next();
+        buffer.vertex(box.minX, box.minY, box.minZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.minX, box.maxY, box.minZ).color(r, g, b, a).next();
+        buffer.vertex(box.maxX, box.maxY, box.minZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.maxX, box.maxY, box.minZ).color(r, g, b, a).next();
+        buffer.vertex(box.maxX, box.maxY, box.maxZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.maxX, box.maxY, box.maxZ).color(r, g, b, a).next();
+        buffer.vertex(box.minX, box.maxY, box.maxZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.minX, box.maxY, box.maxZ).color(r, g, b, a).next();
+        buffer.vertex(box.minX, box.maxY, box.minZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.minX, box.minY, box.minZ).color(r, g, b, a).next();
+        buffer.vertex(box.minX, box.maxY, box.minZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.maxX, box.minY, box.minZ).color(r, g, b, a).next();
+        buffer.vertex(box.maxX, box.maxY, box.minZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.maxX, box.minY, box.maxZ).color(r, g, b, a).next();
+        buffer.vertex(box.maxX, box.maxY, box.maxZ).color(r, g, b, a).next();
+
+        buffer.vertex(box.minX, box.minY, box.maxZ).color(r, g, b, a).next();
+        buffer.vertex(box.minX, box.maxY, box.maxZ).color(r, g, b, a).next();
     }
 
     @Inject(method = "renderLayer", at = @At("HEAD"), cancellable = true)
