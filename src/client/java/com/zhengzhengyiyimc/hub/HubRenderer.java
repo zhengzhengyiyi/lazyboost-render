@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import java.text.DecimalFormat;
 import java.util.Optional;
 
+import com.zhengzhengyiyimc.Lazyboost;
 import com.zhengzhengyiyimc.config.ModConfig;
 
 public class HubRenderer {
@@ -81,16 +82,21 @@ public class HubRenderer {
     }
 
     private void updateTPS(MinecraftClient client) {
-        long currentTime = System.nanoTime();
-        if (currentTime - lastTpsUpdate >= TPS_UPDATE_INTERVAL) {
-            if (client.isIntegratedServerRunning() && client.getServer() != null) {
-                // currentTPS = client.getServer().getTickManager().getTickRate();
-                currentTPS = 20.0f;
-            } else {
-                currentTPS = 20.0f;
-            }
-            lastTpsUpdate = currentTime;
-        }
+    	try {
+	        long currentTime = System.nanoTime();
+	        if (currentTime - lastTpsUpdate >= TPS_UPDATE_INTERVAL) {
+	            if (client.isIntegratedServerRunning() && client.getServer() != null) {
+	                // currentTPS = client.getServer().getTickManager().getTickRate();
+	            	currentTPS = client.getServer().getAverageTickTime();
+	//                currentTPS = 20.0f;
+	            } else {
+	                currentTPS = 20.0f;
+	            }
+	            lastTpsUpdate = currentTime;
+	        }
+    	} catch (Exception e) {
+    		Lazyboost.LOGGER.warn(e.toString());
+    	}
     }
 
     private void updateBiomeText(MinecraftClient client) {

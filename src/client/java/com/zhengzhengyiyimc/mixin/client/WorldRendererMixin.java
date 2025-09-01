@@ -44,9 +44,6 @@ public class WorldRendererMixin {
         double distance = entity.getPos().distanceTo(client.player.getPos());
         if (distance >= config.entity_render_distance) {
             ci.cancel();
-            
-            if (client.player == null || client.world == null) return;
-
 
             if (client.player == null || client.world == null) return;
 
@@ -119,6 +116,8 @@ public class WorldRendererMixin {
     private void renderLayer(RenderLayer renderLayer, double cameraX, double cameraY, double cameraZ, Matrix4f positionMatrix, Matrix4f projectionMatrix, CallbackInfo ci) {
         if (renderLayer == RenderLayer.getTranslucent() && AutoConfig.getConfigHolder(ModConfig.class).getConfig().disablewater) {
             ci.cancel();
+            
+//            TODO - make sure water renders.
         }
     }
 }
