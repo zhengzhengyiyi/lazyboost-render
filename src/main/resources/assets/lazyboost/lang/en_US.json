@@ -1,13 +1,21 @@
 {
     "text.autoconfig.lazyboost_configure.option.disablePartical": "Disable particles",
+    "text.autoconfig.lazyboost_configure.option.disablePartical.@Tooltip": "Disables all particle effects in the game to improve performance.",
     "text.autoconfig.lazyboost_configure.option.disableWeather": "Disable weather effects",
+    "text.autoconfig.lazyboost_configure.option.disableWeather.@Tooltip": "Disables rain, snow, and other weather effects.",
     "text.autoconfig.lazyboost_configure.option.entity_render_distance": "Max entity render distance",
+    "text.autoconfig.lazyboost_configure.option.entity_render_distance.@Tooltip": "Sets the maximum distance at which entities (mobs, players, items) are rendered.",
     "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "Enable auto FPS reduction",
+    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction.@Tooltip": "Automatically reduces the frame rate when the game window is not in focus or minimized.",
     "text.autoconfig.lazyboost_configure.option.smallhub": "enable smallhub",
+    "text.autoconfig.lazyboost_configure.option.smallhub.@Tooltip": "Enables a compact or minimalistic hub interface.",
     "text.autoconfig.lazyboost_configure.option.ambientSoundOptions": "ambientSoundOptions",
+    "text.autoconfig.lazyboost_configure.option.ambientSoundOptions.@Tooltip": "Settings related to ambient sound effects in various biomes and environments.",
 
     "text.autoconfig.lazyboost_configure.option.disablewater": "Disable water",
+    "text.autoconfig.lazyboost_configure.option.disablewater.@Tooltip": "Disables water rendering or water-related effects.",
     "text.autoconfig.lazyboost_configure.option.renderHands": "Render hands",
+    "text.autoconfig.lazyboost_configure.option.renderHands.@Tooltip": "Toggles the visibility of the player's hands in the first-person view.",
 
     "text.autoconfig.lazyboost_configure.option.gamma.@Tooltip": "1.0 is vanilla lighting",
     "text.autoconfig.lazyboost_configure.option.gamma": "gamma (lighting)",
@@ -41,5 +49,6 @@
     "text.autoconfig.lazyboost_configure.category.Sound": "Sound",
     "text.autoconfig.lazyboost_configure.category.default": "General",
 	
-	 "text.autoconfig.lazyboost_configure.option.disableAnimation": "Disable all the animations"
+	 "text.autoconfig.lazyboost_configure.option.disableAnimation": "Disable all the animations",
+     "text.autoconfig.lazyboost_configure.option.disableAnimation.@Tooltip": "Disables all animations in the game, such as block breaking, item swinging, and entity animations."
 }

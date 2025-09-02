@@ -1,32 +1,54 @@
 {
     "text.autoconfig.lazyboost_configure.option.disablePartical": "禁用粒子效果",
+    "text.autoconfig.lazyboost_configure.option.disablePartical.@Tooltip": "禁用游戏中所有的粒子效果以提升性能。",
     "text.autoconfig.lazyboost_configure.option.disableWeather": "禁用天气效果",
+    "text.autoconfig.lazyboost_configure.option.disableWeather.@Tooltip": "禁用下雨、下雪和其他天气效果。",
     "text.autoconfig.lazyboost_configure.option.entity_render_distance": "最大实体渲染距离",
-    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "启用自动降低 FPS",
+    "text.autoconfig.lazyboost_configure.option.entity_render_distance.@Tooltip": "设置实体（生物、玩家、物品）被渲染的最大距离。",
+    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction": "启用自动降低帧率",
+    "text.autoconfig.lazyboost_configure.option.enableAutoFpsReduction.@Tooltip": "当游戏窗口失去焦点或最小化时，自动降低帧率。",
+    "text.autoconfig.lazyboost_configure.option.smallhub": "启用小型信息界面",
+    "text.autoconfig.lazyboost_configure.option.smallhub.@Tooltip": "启用紧凑或极简风格的信息界面。",
+    "text.autoconfig.lazyboost_configure.option.ambientSoundOptions": "环境音效选项",
+    "text.autoconfig.lazyboost_configure.option.ambientSoundOptions.@Tooltip": "与不同生物群系和环境中环境音效相关的设置。",
+
+    "text.autoconfig.lazyboost_configure.option.disablewater": "禁用水",
+    "text.autoconfig.lazyboost_configure.option.disablewater.@Tooltip": "禁用水的渲染或与水相关的特效。",
+    "text.autoconfig.lazyboost_configure.option.renderHands": "渲染手部",
+    "text.autoconfig.lazyboost_configure.option.renderHands.@Tooltip": "切换第一人称视角下玩家手部的可见性。",
+
+    "text.autoconfig.lazyboost_configure.option.gamma.@Tooltip": "1.0 为原版光照",
+    "text.autoconfig.lazyboost_configure.option.gamma": "伽马值 (光照)",
 
     "text.autoconfig.lazyboost_configure.option.disableAmbientCave": "禁用洞穴环境音",
-    "text.autoconfig.lazyboost_configure.option.disableAmbientCave.@Tooltip": "禁用深暗洞穴中持续播放的低沉环境音效。",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCave.@Tooltip": "禁用在黑暗洞穴中播放的低沉、深邃的洞穴环境音。",
 
     "text.autoconfig.lazyboost_configure.option.disableAmbientBasaltDeltas": "禁用玄武岩三角洲环境音",
-    "text.autoconfig.lazyboost_configure.option.disableAmbientBasaltDeltas.@Tooltip": "禁用玄武岩三角洲生物群系的环境音效。",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientBasaltDeltas.@Tooltip": "禁用玄武岩三角洲生物群系中的环境音。",
 
     "text.autoconfig.lazyboost_configure.option.disableAmbientCrimsonForest": "禁用绯红森林环境音",
-    "text.autoconfig.lazyboost_configure.option.disableAmbientCrimsonForest.@Tooltip": "禁用绯红森林生物群系的环境音效。",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientCrimsonForest.@Tooltip": "禁用绯红森林生物群系中的环境音。",
 
     "text.autoconfig.lazyboost_configure.option.disableAmbientNetherWastes": "禁用下界荒地环境音",
-    "text.autoconfig.lazyboost_configure.option.disableAmbientNetherWastes.@Tooltip": "禁用下界荒地生物群系的环境音效。",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientNetherWastes.@Tooltip": "禁用下界荒地生物群系中的环境音。",
 
-    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley": "禁用灵魂沙峡谷环境音",
-    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley.@Tooltip": "禁用灵魂沙峡谷生物群系的环境音效。",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley": "禁用灵魂沙谷环境音",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientSoulSandValley.@Tooltip": "禁用灵魂沙谷生物群系中的环境音。",
 
     "text.autoconfig.lazyboost_configure.option.disableAmbientWarpedForest": "禁用诡异森林环境音",
-    "text.autoconfig.lazyboost_configure.option.disableAmbientWarpedForest.@Tooltip": "禁用诡异森林生物群系的环境音效。",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientWarpedForest.@Tooltip": "禁用诡异森林生物群系中的环境音。",
 
     "text.autoconfig.lazyboost_configure.option.disableAmbientUnderwater": "禁用水下环境音",
-    "text.autoconfig.lazyboost_configure.option.disableAmbientUnderwater.@Tooltip": "禁用在水下时播放的环境音效。",
+    "text.autoconfig.lazyboost_configure.option.disableAmbientUnderwater.@Tooltip": "禁用在水下时播放的环境音。",
 
     "text.autoconfig.lazyboost_configure.title": "Lazy Boost 配置",
 
     "key.lazyboost.opengui": "打开 Lazy Boost 配置界面",
-    "key.lazyboost.key": "Lazy Boost 功能键"
+    "key.lazyboost.key": "Lazy Boost 键",
+
+    "text.autoconfig.lazyboost_configure.category.Sound": "声音",
+    "text.autoconfig.lazyboost_configure.category.default": "常规",
+	
+	 "text.autoconfig.lazyboost_configure.option.disableAnimation": "禁用所有动画",
+     "text.autoconfig.lazyboost_configure.option.disableAnimation.@Tooltip": "禁用游戏中所有的动画，例如方块破坏、物品挥动和实体动画。"
 }

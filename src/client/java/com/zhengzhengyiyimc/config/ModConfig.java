@@ -8,10 +8,13 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry.Category;
 @Config(name="lazyboost_configure")
 public class ModConfig implements ConfigData {
     public boolean disablePartical = false;
+    @ConfigEntry.Gui.Tooltip
     public boolean disableWeather = false;
+    @ConfigEntry.Gui.Tooltip
     public boolean disableAnimation = false;
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 20 * 8)
+    @ConfigEntry.Gui.Tooltip
     public int entity_render_distance = 48;
 
     @Category("Sound")
@@ -36,12 +39,16 @@ public class ModConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public boolean disableAmbientUnderwater = false;
 
+    @ConfigEntry.Gui.Tooltip
     public boolean enableAutoFpsReduction = true;
 
+    @ConfigEntry.Gui.Tooltip
     public boolean smallhub = true;
 
+    @ConfigEntry.Gui.Tooltip
     public boolean disablewater = false;
 
+    @ConfigEntry.Gui.Tooltip
     public boolean renderHands = true;
 
     @ConfigEntry.Gui.Tooltip
