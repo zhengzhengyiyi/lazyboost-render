@@ -39,5 +39,7 @@
     "key.lazyboost.key": "Lazy Boost key",
 
     "text.autoconfig.lazyboost_configure.category.Sound": "Sound",
-    "text.autoconfig.lazyboost_configure.category.default": "General"
+    "text.autoconfig.lazyboost_configure.category.default": "General",
+	
+	 "text.autoconfig.lazyboost_configure.option.disableAnimation": "Disable all the animations"
 }

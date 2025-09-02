@@ -7,7 +7,8 @@
 		"WorldRendererMixin",
 		"SoundEventCancellerMixin",
 		"SinpleOptionMixin",
-		"GameOptionsMixin"
+		"GameOptionsMixin",
+		"SpriteAtlasTextureMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

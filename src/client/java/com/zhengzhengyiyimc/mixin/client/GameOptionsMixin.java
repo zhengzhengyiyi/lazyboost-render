@@ -53,53 +53,6 @@ public class GameOptionsMixin {
 
 			try {
 				printWriter.println("version:" + SharedConstants.getGameVersion().getSaveVersion().getId());
-//				this.accept(new Visitor() {
-//					public void print(String key) {
-//						printWriter.print(key);
-//						printWriter.print(':');
-//					}
-//
-//					public <T> void accept(String key, SimpleOption<T> option) {
-//						DataResult<JsonElement> dataResult = option.getCodec().encodeStart(JsonOps.INSTANCE, option.getValue());
-//						// dataResult.error().ifPresent((partialResult) -> {
-//						// 	LOGGER.error("Error saving option " + option + ": " + partialResult);
-//						// });
-//						dataResult.result().ifPresent((json) -> {
-//							this.print(key);
-//							printWriter.println(GSON.toJson(json));
-//						});
-//					}
-//
-//					public int visitInt(String key, int current) {
-//						this.print(key);
-//						printWriter.println(current);
-//						return current;
-//					}
-//
-//					public boolean visitBoolean(String key, boolean current) {
-//						this.print(key);
-//						printWriter.println(current);
-//						return current;
-//					}
-//
-//					public String visitString(String key, String current) {
-//						this.print(key);
-//						printWriter.println(current);
-//						return current;
-//					}
-//
-//					public float visitFloat(String key, float current) {
-//						this.print(key);
-//						printWriter.println(current);
-//						return current;
-//					}
-//
-//					public <T> T visitObject(String key, T current, Function<String, T> decoder, Function<T, String> encoder) {
-//						this.print(key);
-//						printWriter.println((String)encoder.apply(current));
-//						return current;
-//					}
-//				});
 				writeOption(printWriter, "gamma", AutoConfig.getConfigHolder(ModConfig.class).getConfig().gamma);
 				if (client.getWindow().getVideoMode().isPresent()) {
 					printWriter.println("fullscreenResolution:" + ((VideoMode)client.getWindow().getVideoMode().get()).asString());

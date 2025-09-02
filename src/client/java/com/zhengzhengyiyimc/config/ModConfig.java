@@ -9,6 +9,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry.Category;
 public class ModConfig implements ConfigData {
     public boolean disablePartical = false;
     public boolean disableWeather = false;
+    public boolean disableAnimation = false;
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 20 * 8)
     public int entity_render_distance = 48;
